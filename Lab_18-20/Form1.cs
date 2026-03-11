@@ -6,4 +6,9 @@ public partial class Form1 : Form
     {
         InitializeComponent();
     }
+
+    private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
 }
