@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "wAw790K/1rM=",
+  "dgSpecHash": "LupSXdBiRq4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\MAXIM\\RiderProjects\\Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\microsoft.netcore.app.ref\\9.0.14\\microsoft.netcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\9.0.14\\microsoft.windowsdesktop.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\9.0.14\\microsoft.aspnetcore.app.ref.9.0.14.nupkg.sha512",
+    "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\microsoft.netcore.app.host.win-arm64\\9.0.14\\microsoft.netcore.app.host.win-arm64.9.0.14.nupkg.sha512"
+  ],
   "logs": []
 }

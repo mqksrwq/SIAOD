@@ -10,6 +10,12 @@ public partial class Form1 : Form
         InitializeComponent();
         TreeDataGridView.RowCount = _ROWS_COUNT;
         _RND = new Random();
+        ArrayDataGridView.AllowUserToResizeColumns = false;
+        ArrayDataGridView.AllowUserToResizeRows = false;
+        TreeDataGridView.AllowUserToResizeColumns = false;
+        TreeDataGridView.AllowUserToResizeRows = false;
+        InsertDataGridView.AllowUserToResizeColumns = false;
+        InsertDataGridView.AllowUserToResizeRows = false;
     }
 
     private void Print(int[] m)
@@ -39,11 +45,22 @@ public partial class Form1 : Form
         for (int i = 0; i < m.Length; i++)
         {
             m[i] = _RND.Next(10, 100);
+            FixUp(m, i);
         }
 
         Print(m);
     }
 
+    private void FixUp(int[] m, int index)
+    {
+        int parentIndex = (index - 1) / 2;
+        while (index > 0 && m[parentIndex] < m[index])
+        {
+            (m[parentIndex], m[index]) = (m[index], m[parentIndex]);
+            index = parentIndex;
+            parentIndex = (index - 1) / 2;
+        }
+    }
 
     private void ClearQueueButton_Click(object sender, EventArgs e)
     {
