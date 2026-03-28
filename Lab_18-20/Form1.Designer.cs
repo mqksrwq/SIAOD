@@ -32,13 +32,13 @@ partial class Form1
         panel1 = new System.Windows.Forms.Panel();
         label5 = new System.Windows.Forms.Label();
         label4 = new System.Windows.Forms.Label();
-        numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-        numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-        numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-        button5 = new System.Windows.Forms.Button();
-        button4 = new System.Windows.Forms.Button();
+        DownNumericUpDown = new System.Windows.Forms.NumericUpDown();
+        TopNumericUpDown = new System.Windows.Forms.NumericUpDown();
+        NewElemNumericUpDown = new System.Windows.Forms.NumericUpDown();
+        ChangePriorityButton = new System.Windows.Forms.Button();
+        InsertMaximumButton = new System.Windows.Forms.Button();
         ClearQueueButton = new System.Windows.Forms.Button();
-        button2 = new System.Windows.Forms.Button();
+        AddNew = new System.Windows.Forms.Button();
         CreateQueueButton = new System.Windows.Forms.Button();
         panel2 = new System.Windows.Forms.Panel();
         label1 = new System.Windows.Forms.Label();
@@ -97,9 +97,9 @@ partial class Form1
         panel5 = new System.Windows.Forms.Panel();
         ExitButton = new System.Windows.Forms.Button();
         panel1.SuspendLayout();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)DownNumericUpDown).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)TopNumericUpDown).BeginInit();
+        ((System.ComponentModel.ISupportInitialize)NewElemNumericUpDown).BeginInit();
         panel2.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)ArrayDataGridView).BeginInit();
         panel3.SuspendLayout();
@@ -113,17 +113,17 @@ partial class Form1
         // 
         panel1.Controls.Add(label5);
         panel1.Controls.Add(label4);
-        panel1.Controls.Add(numericUpDown3);
-        panel1.Controls.Add(numericUpDown2);
-        panel1.Controls.Add(numericUpDown1);
-        panel1.Controls.Add(button5);
-        panel1.Controls.Add(button4);
+        panel1.Controls.Add(DownNumericUpDown);
+        panel1.Controls.Add(TopNumericUpDown);
+        panel1.Controls.Add(NewElemNumericUpDown);
+        panel1.Controls.Add(ChangePriorityButton);
+        panel1.Controls.Add(InsertMaximumButton);
         panel1.Controls.Add(ClearQueueButton);
-        panel1.Controls.Add(button2);
+        panel1.Controls.Add(AddNew);
         panel1.Controls.Add(CreateQueueButton);
         panel1.Location = new System.Drawing.Point(12, 12);
         panel1.Name = "panel1";
-        panel1.Size = new System.Drawing.Size(1210, 133);
+        panel1.Size = new System.Drawing.Size(1259, 133);
         panel1.TabIndex = 0;
         // 
         // label5
@@ -142,44 +142,55 @@ partial class Form1
         label4.TabIndex = 1;
         label4.Text = "с";
         // 
-        // numericUpDown3
+        // DownNumericUpDown
         // 
-        numericUpDown3.Location = new System.Drawing.Point(938, 86);
-        numericUpDown3.Name = "numericUpDown3";
-        numericUpDown3.Size = new System.Drawing.Size(63, 39);
-        numericUpDown3.TabIndex = 7;
+        DownNumericUpDown.Location = new System.Drawing.Point(938, 86);
+        DownNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+        DownNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+        DownNumericUpDown.Name = "DownNumericUpDown";
+        DownNumericUpDown.Size = new System.Drawing.Size(63, 39);
+        DownNumericUpDown.TabIndex = 7;
+        DownNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
-        // numericUpDown2
+        // TopNumericUpDown
         // 
-        numericUpDown2.Location = new System.Drawing.Point(1102, 86);
-        numericUpDown2.Name = "numericUpDown2";
-        numericUpDown2.Size = new System.Drawing.Size(63, 39);
-        numericUpDown2.TabIndex = 6;
+        TopNumericUpDown.Location = new System.Drawing.Point(1102, 86);
+        TopNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+        TopNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+        TopNumericUpDown.Name = "TopNumericUpDown";
+        TopNumericUpDown.Size = new System.Drawing.Size(63, 39);
+        TopNumericUpDown.TabIndex = 6;
+        TopNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
-        // numericUpDown1
+        // NewElemNumericUpDown
         // 
-        numericUpDown1.Location = new System.Drawing.Point(347, 80);
-        numericUpDown1.Name = "numericUpDown1";
-        numericUpDown1.Size = new System.Drawing.Size(87, 39);
-        numericUpDown1.TabIndex = 5;
+        NewElemNumericUpDown.Location = new System.Drawing.Point(347, 80);
+        NewElemNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
+        NewElemNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
+        NewElemNumericUpDown.Name = "NewElemNumericUpDown";
+        NewElemNumericUpDown.Size = new System.Drawing.Size(87, 39);
+        NewElemNumericUpDown.TabIndex = 5;
+        NewElemNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
-        // button5
+        // ChangePriorityButton
         // 
-        button5.Location = new System.Drawing.Point(455, 80);
-        button5.Name = "button5";
-        button5.Size = new System.Drawing.Size(354, 45);
-        button5.TabIndex = 4;
-        button5.Text = "Изменить приоритет";
-        button5.UseVisualStyleBackColor = true;
+        ChangePriorityButton.Location = new System.Drawing.Point(455, 80);
+        ChangePriorityButton.Name = "ChangePriorityButton";
+        ChangePriorityButton.Size = new System.Drawing.Size(354, 45);
+        ChangePriorityButton.TabIndex = 4;
+        ChangePriorityButton.Text = "Изменить приоритет";
+        ChangePriorityButton.UseVisualStyleBackColor = true;
+        ChangePriorityButton.Click += ChangePriorityButton_Click;
         // 
-        // button4
+        // InsertMaximumButton
         // 
-        button4.Location = new System.Drawing.Point(929, 3);
-        button4.Name = "button4";
-        button4.Size = new System.Drawing.Size(277, 45);
-        button4.TabIndex = 3;
-        button4.Text = "Извлечь наибольший";
-        button4.UseVisualStyleBackColor = true;
+        InsertMaximumButton.Location = new System.Drawing.Point(929, 3);
+        InsertMaximumButton.Name = "InsertMaximumButton";
+        InsertMaximumButton.Size = new System.Drawing.Size(277, 45);
+        InsertMaximumButton.TabIndex = 3;
+        InsertMaximumButton.Text = "Извлечь наибольший";
+        InsertMaximumButton.UseVisualStyleBackColor = true;
+        InsertMaximumButton.Click += InsertMaximumButton_Click;
         // 
         // ClearQueueButton
         // 
@@ -191,14 +202,15 @@ partial class Form1
         ClearQueueButton.UseVisualStyleBackColor = true;
         ClearQueueButton.Click += ClearQueueButton_Click;
         // 
-        // button2
+        // AddNew
         // 
-        button2.Location = new System.Drawing.Point(3, 74);
-        button2.Name = "button2";
-        button2.Size = new System.Drawing.Size(318, 45);
-        button2.TabIndex = 1;
-        button2.Text = "Вставить новый";
-        button2.UseVisualStyleBackColor = true;
+        AddNew.Location = new System.Drawing.Point(3, 74);
+        AddNew.Name = "AddNew";
+        AddNew.Size = new System.Drawing.Size(318, 45);
+        AddNew.TabIndex = 1;
+        AddNew.Text = "Вставить новый";
+        AddNew.UseVisualStyleBackColor = true;
+        AddNew.Click += AddNew_Click;
         // 
         // CreateQueueButton
         // 
@@ -216,7 +228,7 @@ partial class Form1
         panel2.Controls.Add(ArrayDataGridView);
         panel2.Location = new System.Drawing.Point(7, 151);
         panel2.Name = "panel2";
-        panel2.Size = new System.Drawing.Size(1215, 193);
+        panel2.Size = new System.Drawing.Size(1334, 193);
         panel2.TabIndex = 1;
         // 
         // label1
@@ -234,11 +246,11 @@ partial class Form1
         ArrayDataGridView.ColumnHeadersVisible = false;
         ArrayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12, Column13, Column14, Column15 });
         ArrayDataGridView.EnableHeadersVisualStyles = false;
-        ArrayDataGridView.Location = new System.Drawing.Point(6, 112);
+        ArrayDataGridView.Location = new System.Drawing.Point(6, 97);
         ArrayDataGridView.Name = "ArrayDataGridView";
         ArrayDataGridView.RowHeadersVisible = false;
         ArrayDataGridView.RowHeadersWidth = 51;
-        ArrayDataGridView.Size = new System.Drawing.Size(1209, 45);
+        ArrayDataGridView.Size = new System.Drawing.Size(1325, 45);
         ArrayDataGridView.TabIndex = 0;
         ArrayDataGridView.Text = "dataGridView1";
         // 
@@ -643,7 +655,7 @@ partial class Form1
         // 
         AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
         AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1230, 863);
+        ClientSize = new System.Drawing.Size(1353, 863);
         Controls.Add(panel5);
         Controls.Add(panel4);
         Controls.Add(panel3);
@@ -652,9 +664,9 @@ partial class Form1
         Margin = new System.Windows.Forms.Padding(5);
         Text = "Бояркин_24ВП1";
         panel1.ResumeLayout(false);
-        ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-        ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+        ((System.ComponentModel.ISupportInitialize)DownNumericUpDown).EndInit();
+        ((System.ComponentModel.ISupportInitialize)TopNumericUpDown).EndInit();
+        ((System.ComponentModel.ISupportInitialize)NewElemNumericUpDown).EndInit();
         panel2.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)ArrayDataGridView).EndInit();
         panel3.ResumeLayout(false);
@@ -731,13 +743,13 @@ partial class Form1
     private System.Windows.Forms.Panel panel4;
     private System.Windows.Forms.Panel panel5;
     private System.Windows.Forms.Button CreateQueueButton;
-    private System.Windows.Forms.Button button2;
+    private System.Windows.Forms.Button AddNew;
     private System.Windows.Forms.Button ClearQueueButton;
-    private System.Windows.Forms.Button button4;
-    private System.Windows.Forms.Button button5;
-    private System.Windows.Forms.NumericUpDown numericUpDown1;
-    private System.Windows.Forms.NumericUpDown numericUpDown2;
-    private System.Windows.Forms.NumericUpDown numericUpDown3;
+    private System.Windows.Forms.Button InsertMaximumButton;
+    private System.Windows.Forms.Button ChangePriorityButton;
+    private System.Windows.Forms.NumericUpDown NewElemNumericUpDown;
+    private System.Windows.Forms.NumericUpDown TopNumericUpDown;
+    private System.Windows.Forms.NumericUpDown DownNumericUpDown;
     private System.Windows.Forms.DataGridView ArrayDataGridView;
 
     #endregion
