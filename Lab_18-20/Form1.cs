@@ -14,9 +14,6 @@ public partial class Form1 : Form
     public Form1()
     {
         InitializeComponent();
-        TreeDataGridView.RowCount = _ROWS_COUNT;
-        ArrayDataGridView.Rows.Add();
-        InsertDataGridView.Rows.Add();
         _RND = new Random();
         m = new int[_CELLS_COUNT];
         n = 0;

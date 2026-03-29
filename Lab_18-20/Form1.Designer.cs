@@ -251,6 +251,7 @@ partial class Form1
         ArrayDataGridView.Name = "ArrayDataGridView";
         ArrayDataGridView.RowHeadersVisible = false;
         ArrayDataGridView.RowHeadersWidth = 51;
+        ArrayDataGridView.RowCount = 1;
         ArrayDataGridView.Size = new Size(1209, 45);
         ArrayDataGridView.TabIndex = 0;
         ArrayDataGridView.Text = "dataGridView1";
@@ -389,6 +390,7 @@ partial class Form1
         TreeDataGridView.Name = "TreeDataGridView";
         TreeDataGridView.RowHeadersVisible = false;
         TreeDataGridView.RowHeadersWidth = 51;
+        TreeDataGridView.RowCount = 4;
         TreeDataGridView.Size = new Size(1207, 168);
         TreeDataGridView.TabIndex = 1;
         TreeDataGridView.Text = "dataGridView2";
@@ -527,6 +529,7 @@ partial class Form1
         InsertDataGridView.Name = "InsertDataGridView";
         InsertDataGridView.RowHeadersVisible = false;
         InsertDataGridView.RowHeadersWidth = 51;
+        InsertDataGridView.RowCount = 1;
         InsertDataGridView.Size = new Size(1207, 45);
         InsertDataGridView.TabIndex = 2;
         InsertDataGridView.Text = "dataGridView3";
