@@ -15,6 +15,8 @@ public partial class Form1 : Form
     {
         InitializeComponent();
         TreeDataGridView.RowCount = _ROWS_COUNT;
+        ArrayDataGridView.Rows.Add();
+        InsertDataGridView.Rows.Add();
         _RND = new Random();
         m = new int[_CELLS_COUNT];
         n = 0;
@@ -23,9 +25,6 @@ public partial class Form1 : Form
 
     private void Print(int[] m)
     {
-        ArrayDataGridView.Rows.Clear();
-        ArrayDataGridView.Rows.Add();
-
         for (int i = 0; i < ArrayDataGridView.Columns.Count; i++)
         {
             ArrayDataGridView.Rows[0].Cells[i].Value = null;
@@ -36,9 +35,14 @@ public partial class Form1 : Form
             if (i < ArrayDataGridView.Columns.Count)
                 ArrayDataGridView.Rows[0].Cells[i].Value = m[i].ToString();
         }
-        
-        TreeDataGridView.Rows.Clear();
-        TreeDataGridView.RowCount = _ROWS_COUNT;
+
+        for (int i = 0; i < TreeDataGridView.Rows.Count; i++)
+        {
+            for (int j = 0; j < TreeDataGridView.Columns.Count; j++)
+            {
+                TreeDataGridView.Rows[i].Cells[j].Value = null;
+            }
+        }
 
         int index = 0;
         for (int i = 1; i <= _ROWS_COUNT; i++)
@@ -46,7 +50,7 @@ public partial class Form1 : Form
             int j = m.Length / (int)Math.Pow(2, i);
             while (j < m.Length)
             {
-                if (m[index] != 0)
+                if (index < n && m[index] != 0)
                 {
                     if (i - 1 < TreeDataGridView.Rows.Count && j < TreeDataGridView.Rows[i - 1].Cells.Count)
                         TreeDataGridView.Rows[i - 1].Cells[j].Value = m[index].ToString();
@@ -64,13 +68,17 @@ public partial class Form1 : Form
         n = 0;
         _extractedCount = 0;
 
-        InsertDataGridView.Rows.Clear();
+        if (InsertDataGridView.Rows.Count == 0) InsertDataGridView.Rows.Add();
+        for (int i = 0; i < InsertDataGridView.Columns.Count; i++)
+        {
+            InsertDataGridView.Rows[0].Cells[i].Value = null;
+        }
 
         for (int i = 0; i < ArrayDataGridView.Columns.Count; i++)
         {
             ArrayDataGridView.Rows[0].Cells[i].Value = null;
         }
-        
+
         for (int i = 0; i < m.Length; i++)
         {
             m[i] = _RND.Next(10, 100);
@@ -108,12 +116,24 @@ public partial class Form1 : Form
 
     private void ClearQueueButton_Click(object sender, EventArgs e)
     {
-        ArrayDataGridView.Rows.Clear();
+        for (int i = 0; i < ArrayDataGridView.Columns.Count; i++)
+        {
+            ArrayDataGridView.Rows[0].Cells[i].Value = null;
+        }
 
-        InsertDataGridView.Rows.Clear();
+        if (InsertDataGridView.Rows.Count == 0) InsertDataGridView.Rows.Add();
+        for (int i = 0; i < InsertDataGridView.Columns.Count; i++)
+        {
+            InsertDataGridView.Rows[0].Cells[i].Value = null;
+        }
 
-        TreeDataGridView.Rows.Clear();
-        TreeDataGridView.RowCount = _ROWS_COUNT;
+        for (int i = 0; i < TreeDataGridView.Rows.Count; i++)
+        {
+            for (int j = 0; j < TreeDataGridView.Columns.Count; j++)
+            {
+                TreeDataGridView.Rows[i].Cells[j].Value = null;
+            }
+        }
 
         _extractedCount = 0;
         n = 0;
@@ -130,7 +150,7 @@ public partial class Form1 : Form
         {
             if (n == 0)
                 throw new ArgumentException("Невозможно извлечь наибольший - очередь пуста!");
-            
+
             int maximum = m[0];
             (m[0], m[n - 1]) = (m[n - 1], m[0]);
             m[n - 1] = 0;

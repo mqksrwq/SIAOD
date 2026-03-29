@@ -29,73 +29,73 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        panel1 = new System.Windows.Forms.Panel();
-        label5 = new System.Windows.Forms.Label();
-        label4 = new System.Windows.Forms.Label();
-        DownNumericUpDown = new System.Windows.Forms.NumericUpDown();
-        TopNumericUpDown = new System.Windows.Forms.NumericUpDown();
-        NewElemNumericUpDown = new System.Windows.Forms.NumericUpDown();
-        ChangePriorityButton = new System.Windows.Forms.Button();
-        InsertMaximumButton = new System.Windows.Forms.Button();
-        ClearQueueButton = new System.Windows.Forms.Button();
-        AddNew = new System.Windows.Forms.Button();
-        CreateQueueButton = new System.Windows.Forms.Button();
-        panel2 = new System.Windows.Forms.Panel();
-        label1 = new System.Windows.Forms.Label();
-        ArrayDataGridView = new System.Windows.Forms.DataGridView();
-        Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        panel3 = new System.Windows.Forms.Panel();
-        label2 = new System.Windows.Forms.Label();
-        TreeDataGridView = new System.Windows.Forms.DataGridView();
-        dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        panel4 = new System.Windows.Forms.Panel();
-        label3 = new System.Windows.Forms.Label();
-        InsertDataGridView = new System.Windows.Forms.DataGridView();
-        dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-        panel5 = new System.Windows.Forms.Panel();
-        ExitButton = new System.Windows.Forms.Button();
+        panel1 = new Panel();
+        label5 = new Label();
+        label4 = new Label();
+        DownNumericUpDown = new NumericUpDown();
+        TopNumericUpDown = new NumericUpDown();
+        NewElemNumericUpDown = new NumericUpDown();
+        ChangePriorityButton = new Button();
+        InsertMaximumButton = new Button();
+        ClearQueueButton = new Button();
+        AddNew = new Button();
+        CreateQueueButton = new Button();
+        panel2 = new Panel();
+        label1 = new Label();
+        ArrayDataGridView = new DataGridView();
+        Column1 = new DataGridViewTextBoxColumn();
+        Column2 = new DataGridViewTextBoxColumn();
+        Column3 = new DataGridViewTextBoxColumn();
+        Column4 = new DataGridViewTextBoxColumn();
+        Column5 = new DataGridViewTextBoxColumn();
+        Column6 = new DataGridViewTextBoxColumn();
+        Column7 = new DataGridViewTextBoxColumn();
+        Column8 = new DataGridViewTextBoxColumn();
+        Column9 = new DataGridViewTextBoxColumn();
+        Column10 = new DataGridViewTextBoxColumn();
+        Column11 = new DataGridViewTextBoxColumn();
+        Column12 = new DataGridViewTextBoxColumn();
+        Column13 = new DataGridViewTextBoxColumn();
+        Column14 = new DataGridViewTextBoxColumn();
+        Column15 = new DataGridViewTextBoxColumn();
+        panel3 = new Panel();
+        label2 = new Label();
+        TreeDataGridView = new DataGridView();
+        dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn14 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn15 = new DataGridViewTextBoxColumn();
+        panel4 = new Panel();
+        label3 = new Label();
+        InsertDataGridView = new DataGridView();
+        dataGridViewTextBoxColumn16 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn17 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn18 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn19 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn20 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn21 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn22 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn23 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn24 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn25 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn26 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn27 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn28 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn29 = new DataGridViewTextBoxColumn();
+        dataGridViewTextBoxColumn30 = new DataGridViewTextBoxColumn();
+        panel5 = new Panel();
+        ExitButton = new Button();
         panel1.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)DownNumericUpDown).BeginInit();
         ((System.ComponentModel.ISupportInitialize)TopNumericUpDown).BeginInit();
@@ -121,62 +121,62 @@ partial class Form1
         panel1.Controls.Add(ClearQueueButton);
         panel1.Controls.Add(AddNew);
         panel1.Controls.Add(CreateQueueButton);
-        panel1.Location = new System.Drawing.Point(12, 12);
+        panel1.Location = new Point(12, 12);
         panel1.Name = "panel1";
-        panel1.Size = new System.Drawing.Size(1259, 133);
+        panel1.Size = new Size(1210, 133);
         panel1.TabIndex = 0;
         // 
         // label5
         // 
-        label5.Location = new System.Drawing.Point(1030, 88);
+        label5.Location = new Point(1030, 88);
         label5.Name = "label5";
-        label5.Size = new System.Drawing.Size(51, 37);
+        label5.Size = new Size(51, 37);
         label5.TabIndex = 8;
         label5.Text = "на";
         // 
         // label4
         // 
-        label4.Location = new System.Drawing.Point(862, 86);
+        label4.Location = new Point(862, 86);
         label4.Name = "label4";
-        label4.Size = new System.Drawing.Size(51, 39);
+        label4.Size = new Size(51, 39);
         label4.TabIndex = 1;
         label4.Text = "с";
         // 
         // DownNumericUpDown
         // 
-        DownNumericUpDown.Location = new System.Drawing.Point(938, 86);
+        DownNumericUpDown.Location = new Point(938, 86);
         DownNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
         DownNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
         DownNumericUpDown.Name = "DownNumericUpDown";
-        DownNumericUpDown.Size = new System.Drawing.Size(63, 39);
+        DownNumericUpDown.Size = new Size(63, 39);
         DownNumericUpDown.TabIndex = 7;
         DownNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
         // TopNumericUpDown
         // 
-        TopNumericUpDown.Location = new System.Drawing.Point(1102, 86);
+        TopNumericUpDown.Location = new Point(1102, 86);
         TopNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
         TopNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
         TopNumericUpDown.Name = "TopNumericUpDown";
-        TopNumericUpDown.Size = new System.Drawing.Size(63, 39);
+        TopNumericUpDown.Size = new Size(63, 39);
         TopNumericUpDown.TabIndex = 6;
         TopNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
         // NewElemNumericUpDown
         // 
-        NewElemNumericUpDown.Location = new System.Drawing.Point(347, 80);
+        NewElemNumericUpDown.Location = new Point(347, 80);
         NewElemNumericUpDown.Maximum = new decimal(new int[] { 99, 0, 0, 0 });
         NewElemNumericUpDown.Minimum = new decimal(new int[] { 10, 0, 0, 0 });
         NewElemNumericUpDown.Name = "NewElemNumericUpDown";
-        NewElemNumericUpDown.Size = new System.Drawing.Size(87, 39);
+        NewElemNumericUpDown.Size = new Size(87, 39);
         NewElemNumericUpDown.TabIndex = 5;
         NewElemNumericUpDown.Value = new decimal(new int[] { 10, 0, 0, 0 });
         // 
         // ChangePriorityButton
         // 
-        ChangePriorityButton.Location = new System.Drawing.Point(455, 80);
+        ChangePriorityButton.Location = new Point(455, 80);
         ChangePriorityButton.Name = "ChangePriorityButton";
-        ChangePriorityButton.Size = new System.Drawing.Size(354, 45);
+        ChangePriorityButton.Size = new Size(354, 45);
         ChangePriorityButton.TabIndex = 4;
         ChangePriorityButton.Text = "Изменить приоритет";
         ChangePriorityButton.UseVisualStyleBackColor = true;
@@ -184,9 +184,9 @@ partial class Form1
         // 
         // InsertMaximumButton
         // 
-        InsertMaximumButton.Location = new System.Drawing.Point(929, 3);
+        InsertMaximumButton.Location = new Point(929, 3);
         InsertMaximumButton.Name = "InsertMaximumButton";
-        InsertMaximumButton.Size = new System.Drawing.Size(277, 45);
+        InsertMaximumButton.Size = new Size(277, 45);
         InsertMaximumButton.TabIndex = 3;
         InsertMaximumButton.Text = "Извлечь наибольший";
         InsertMaximumButton.UseVisualStyleBackColor = true;
@@ -194,9 +194,9 @@ partial class Form1
         // 
         // ClearQueueButton
         // 
-        ClearQueueButton.Location = new System.Drawing.Point(455, 3);
+        ClearQueueButton.Location = new Point(455, 3);
         ClearQueueButton.Name = "ClearQueueButton";
-        ClearQueueButton.Size = new System.Drawing.Size(354, 45);
+        ClearQueueButton.Size = new Size(354, 45);
         ClearQueueButton.TabIndex = 2;
         ClearQueueButton.Text = "Очистить очередь";
         ClearQueueButton.UseVisualStyleBackColor = true;
@@ -204,9 +204,9 @@ partial class Form1
         // 
         // AddNew
         // 
-        AddNew.Location = new System.Drawing.Point(3, 74);
+        AddNew.Location = new Point(3, 74);
         AddNew.Name = "AddNew";
-        AddNew.Size = new System.Drawing.Size(318, 45);
+        AddNew.Size = new Size(318, 45);
         AddNew.TabIndex = 1;
         AddNew.Text = "Вставить новый";
         AddNew.UseVisualStyleBackColor = true;
@@ -214,9 +214,9 @@ partial class Form1
         // 
         // CreateQueueButton
         // 
-        CreateQueueButton.Location = new System.Drawing.Point(3, 3);
+        CreateQueueButton.Location = new Point(3, 3);
         CreateQueueButton.Name = "CreateQueueButton";
-        CreateQueueButton.Size = new System.Drawing.Size(318, 45);
+        CreateQueueButton.Size = new Size(318, 45);
         CreateQueueButton.TabIndex = 0;
         CreateQueueButton.Text = "Создать очередь";
         CreateQueueButton.UseVisualStyleBackColor = true;
@@ -226,31 +226,32 @@ partial class Form1
         // 
         panel2.Controls.Add(label1);
         panel2.Controls.Add(ArrayDataGridView);
-        panel2.Location = new System.Drawing.Point(7, 151);
+        panel2.Location = new Point(7, 151);
         panel2.Name = "panel2";
-        panel2.Size = new System.Drawing.Size(1334, 193);
+        panel2.Size = new Size(1215, 193);
         panel2.TabIndex = 1;
         // 
         // label1
         // 
-        label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-        label1.Location = new System.Drawing.Point(366, 24);
+        label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+        label1.Location = new Point(366, 24);
         label1.Name = "label1";
-        label1.Size = new System.Drawing.Size(521, 45);
+        label1.Size = new Size(521, 45);
         label1.TabIndex = 0;
         label1.Text = "Представление в виде массива";
         // 
         // ArrayDataGridView
         // 
-        ArrayDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        ArrayDataGridView.AllowUserToAddRows = false;
+        ArrayDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         ArrayDataGridView.ColumnHeadersVisible = false;
-        ArrayDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12, Column13, Column14, Column15 });
+        ArrayDataGridView.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7, Column8, Column9, Column10, Column11, Column12, Column13, Column14, Column15 });
         ArrayDataGridView.EnableHeadersVisualStyles = false;
-        ArrayDataGridView.Location = new System.Drawing.Point(6, 97);
+        ArrayDataGridView.Location = new Point(6, 97);
         ArrayDataGridView.Name = "ArrayDataGridView";
         ArrayDataGridView.RowHeadersVisible = false;
         ArrayDataGridView.RowHeadersWidth = 51;
-        ArrayDataGridView.Size = new System.Drawing.Size(1325, 45);
+        ArrayDataGridView.Size = new Size(1209, 45);
         ArrayDataGridView.TabIndex = 0;
         ArrayDataGridView.Text = "dataGridView1";
         // 
@@ -363,31 +364,32 @@ partial class Form1
         // 
         panel3.Controls.Add(label2);
         panel3.Controls.Add(TreeDataGridView);
-        panel3.Location = new System.Drawing.Point(7, 350);
+        panel3.Location = new Point(7, 350);
         panel3.Name = "panel3";
-        panel3.Size = new System.Drawing.Size(1215, 274);
+        panel3.Size = new Size(1215, 274);
         panel3.TabIndex = 2;
         // 
         // label2
         // 
-        label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-        label2.Location = new System.Drawing.Point(381, 11);
+        label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+        label2.Location = new Point(381, 11);
         label2.Name = "label2";
-        label2.Size = new System.Drawing.Size(495, 57);
+        label2.Size = new Size(495, 57);
         label2.TabIndex = 2;
         label2.Text = "Представление в виде дерева";
         // 
         // TreeDataGridView
         // 
-        TreeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        TreeDataGridView.AllowUserToAddRows = false;
+        TreeDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         TreeDataGridView.ColumnHeadersVisible = false;
-        TreeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15 });
+        TreeDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9, dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13, dataGridViewTextBoxColumn14, dataGridViewTextBoxColumn15 });
         TreeDataGridView.EnableHeadersVisualStyles = false;
-        TreeDataGridView.Location = new System.Drawing.Point(8, 71);
+        TreeDataGridView.Location = new Point(8, 71);
         TreeDataGridView.Name = "TreeDataGridView";
         TreeDataGridView.RowHeadersVisible = false;
         TreeDataGridView.RowHeadersWidth = 51;
-        TreeDataGridView.Size = new System.Drawing.Size(1207, 168);
+        TreeDataGridView.Size = new Size(1207, 168);
         TreeDataGridView.TabIndex = 1;
         TreeDataGridView.Text = "dataGridView2";
         // 
@@ -500,31 +502,32 @@ partial class Form1
         // 
         panel4.Controls.Add(label3);
         panel4.Controls.Add(InsertDataGridView);
-        panel4.Location = new System.Drawing.Point(7, 630);
+        panel4.Location = new Point(7, 630);
         panel4.Name = "panel4";
-        panel4.Size = new System.Drawing.Size(1215, 125);
+        panel4.Size = new Size(1215, 125);
         panel4.TabIndex = 3;
         // 
         // label3
         // 
-        label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-        label3.Location = new System.Drawing.Point(460, 16);
+        label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+        label3.Location = new Point(460, 16);
         label3.Name = "label3";
-        label3.Size = new System.Drawing.Size(322, 47);
+        label3.Size = new Size(322, 47);
         label3.TabIndex = 3;
         label3.Text = "Результат выборки";
         // 
         // InsertDataGridView
         // 
-        InsertDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+        InsertDataGridView.AllowUserToAddRows = false;
+        InsertDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
         InsertDataGridView.ColumnHeadersVisible = false;
-        InsertDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20, dataGridViewTextBoxColumn21, dataGridViewTextBoxColumn22, dataGridViewTextBoxColumn23, dataGridViewTextBoxColumn24, dataGridViewTextBoxColumn25, dataGridViewTextBoxColumn26, dataGridViewTextBoxColumn27, dataGridViewTextBoxColumn28, dataGridViewTextBoxColumn29, dataGridViewTextBoxColumn30 });
+        InsertDataGridView.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn16, dataGridViewTextBoxColumn17, dataGridViewTextBoxColumn18, dataGridViewTextBoxColumn19, dataGridViewTextBoxColumn20, dataGridViewTextBoxColumn21, dataGridViewTextBoxColumn22, dataGridViewTextBoxColumn23, dataGridViewTextBoxColumn24, dataGridViewTextBoxColumn25, dataGridViewTextBoxColumn26, dataGridViewTextBoxColumn27, dataGridViewTextBoxColumn28, dataGridViewTextBoxColumn29, dataGridViewTextBoxColumn30 });
         InsertDataGridView.EnableHeadersVisualStyles = false;
-        InsertDataGridView.Location = new System.Drawing.Point(8, 66);
+        InsertDataGridView.Location = new Point(8, 66);
         InsertDataGridView.Name = "InsertDataGridView";
         InsertDataGridView.RowHeadersVisible = false;
         InsertDataGridView.RowHeadersWidth = 51;
-        InsertDataGridView.Size = new System.Drawing.Size(1207, 45);
+        InsertDataGridView.Size = new Size(1207, 45);
         InsertDataGridView.TabIndex = 2;
         InsertDataGridView.Text = "dataGridView3";
         // 
@@ -636,16 +639,16 @@ partial class Form1
         // panel5
         // 
         panel5.Controls.Add(ExitButton);
-        panel5.Location = new System.Drawing.Point(7, 761);
+        panel5.Location = new Point(7, 761);
         panel5.Name = "panel5";
-        panel5.Size = new System.Drawing.Size(1215, 90);
+        panel5.Size = new Size(1215, 90);
         panel5.TabIndex = 1;
         // 
         // ExitButton
         // 
-        ExitButton.Location = new System.Drawing.Point(483, 17);
+        ExitButton.Location = new Point(483, 17);
         ExitButton.Name = "ExitButton";
-        ExitButton.Size = new System.Drawing.Size(277, 56);
+        ExitButton.Size = new Size(277, 56);
         ExitButton.TabIndex = 2;
         ExitButton.Text = "Выход";
         ExitButton.UseVisualStyleBackColor = true;
@@ -653,15 +656,16 @@ partial class Form1
         // 
         // Form1
         // 
-        AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
-        AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        ClientSize = new System.Drawing.Size(1353, 863);
+        AutoScaleDimensions = new SizeF(13F, 32F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(1237, 863);
         Controls.Add(panel5);
         Controls.Add(panel4);
         Controls.Add(panel3);
         Controls.Add(panel2);
         Controls.Add(panel1);
-        Margin = new System.Windows.Forms.Padding(5);
+        Margin = new Padding(5);
+        Name = "Form1";
         Text = "Бояркин_24ВП1";
         panel1.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)DownNumericUpDown).EndInit();

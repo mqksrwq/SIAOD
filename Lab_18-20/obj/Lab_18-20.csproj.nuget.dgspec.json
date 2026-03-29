@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj": {}
+    "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj": {
+    "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
+        "projectUniqueName": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
         "projectName": "Lab_18-20",
-        "projectPath": "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
+        "projectPath": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
         "packagesPath": "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maksim_boyarkin\\RiderProjects\\SIAOD_Lab_18-20\\Lab_18-20\\obj\\",
+        "outputPath": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\maksim_boyarkin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\maksim_boyarkin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net9.0-windows"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
