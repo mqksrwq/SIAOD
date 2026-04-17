@@ -13,9 +13,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
-      "projectName": "Lab_18-20",
-      "projectPath": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-20.csproj",
+      "projectUniqueName": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-21.csproj",
+      "projectName": "Lab_18-21",
+      "projectPath": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\Lab_18-21.csproj",
       "packagesPath": "C:\\Users\\maksim_boyarkin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\maksim_boyarkin\\source\\repos\\SIAOD_Lab_18-20\\Lab_18-20\\obj\\",
       "projectStyle": "PackageReference",
@@ -32,6 +32,7 @@
       },
       "frameworks": {
         "net9.0-windows7.0": {
+          "framework": "net9.0-windows7.0",
           "targetAlias": "net9.0-windows",
           "projectReferences": {}
         }
@@ -50,6 +51,7 @@
     },
     "frameworks": {
       "net9.0-windows7.0": {
+        "framework": "net9.0-windows7.0",
         "targetAlias": "net9.0-windows",
         "imports": [
           "net461",
@@ -65,19 +67,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[9.0.14, 9.0.14]"
+            "version": "[9.0.15, 9.0.15]"
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-arm64",
-            "version": "[9.0.14, 9.0.14]"
+            "version": "[9.0.15, 9.0.15]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[9.0.14, 9.0.14]"
+            "version": "[9.0.15, 9.0.15]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[9.0.14, 9.0.14]"
+            "version": "[9.0.15, 9.0.15]"
           }
         ],
         "frameworkReferences": {
@@ -88,7 +90,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

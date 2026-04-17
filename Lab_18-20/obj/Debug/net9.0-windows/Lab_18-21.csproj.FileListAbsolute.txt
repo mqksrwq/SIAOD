@@ -1,0 +1,17 @@
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\bin\Debug\net9.0-windows\Lab_18-21.exe
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\bin\Debug\net9.0-windows\Lab_18-21.deps.json
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\bin\Debug\net9.0-windows\Lab_18-21.runtimeconfig.json
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\bin\Debug\net9.0-windows\Lab_18-21.dll
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\bin\Debug\net9.0-windows\Lab_18-21.pdb
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18_20.Form1.resources
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.csproj.GenerateResource.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.AssemblyInfoInputs.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.AssemblyInfo.cs
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.csproj.CoreCompileInputs.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.sourcelink.json
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.dll
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\refint\Lab_18-21.dll
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.pdb
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\Lab_18-21.genruntimeconfig.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_18-20\obj\Debug\net9.0-windows\ref\Lab_18-21.dll

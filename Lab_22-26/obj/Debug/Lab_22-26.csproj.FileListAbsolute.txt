@@ -1,0 +1,10 @@
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\bin\Debug\Lab_22-26.exe.config
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\bin\Debug\Lab_22-26.exe
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\bin\Debug\Lab_22-26.pdb
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22-26.csproj.AssemblyReference.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22_26.Form1.resources
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22_26.Properties.Resources.resources
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22-26.csproj.GenerateResource.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22-26.csproj.CoreCompileInputs.cache
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22-26.exe
+C:\Users\maksim_boyarkin\source\repos\SIAOD_Lab_18-20\Lab_22-26\obj\Debug\Lab_22-26.pdb
