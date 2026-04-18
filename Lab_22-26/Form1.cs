@@ -58,10 +58,12 @@ namespace Lab_22_26
             MassiveInitialize();
 
             bool runSimpleTwoPhase = Convert.ToBoolean(dataGridView1.Rows[0].Cells[0].Value);
+            bool runSimpleOnePhase = Convert.ToBoolean(dataGridView1.Rows[1].Cells[0].Value);
 
             if (runSimpleTwoPhase)
             {
-                int[] workArray = (int[])m.Clone();
+                int[] workArray = (int[])copy.Clone();
+                ResetCounters();
 
                 int startTime = Environment.TickCount;
                 workArray = SimpleTwoPhaseMergeSort(workArray);
@@ -77,7 +79,26 @@ namespace Lab_22_26
                 ClearRowResult(0);
             }
 
-            for (int i = 1; i < dataGridView1.RowCount; i++)
+            if (runSimpleOnePhase)
+            {
+                int[] workArray = (int[])copy.Clone();
+                ResetCounters();
+
+                int startTime = Environment.TickCount;
+                workArray = SimpleOnePhaseMergeSort(workArray);
+                int endTime = Environment.TickCount - startTime;
+
+                dataGridView1.Rows[1].Cells[2].Value = comparisons;
+                dataGridView1.Rows[1].Cells[3].Value = assignments;
+                dataGridView1.Rows[1].Cells[4].Value = endTime;
+                dataGridView1.Rows[1].Cells[5].Value = SortingCheck(workArray) ? "Да" : "Нет";
+            }
+            else
+            {
+                ClearRowResult(1);
+            }
+
+            for (int i = 2; i < dataGridView1.RowCount; i++)
             {
                 ClearRowResult(i);
             }
@@ -85,8 +106,7 @@ namespace Lab_22_26
 
         private void MassiveInitialize()
         {
-            comparisons = 0;
-            assignments = 0;
+            ResetCounters();
 
             size = (int)SizeNUD.Value;
             m = new int[size];
@@ -100,27 +120,10 @@ namespace Lab_22_26
             Array.Copy(m, copy, size);
         }
 
-        private void ApplyOrderedPercent(int[] array, int orderedPercent)
+        private void ResetCounters()
         {
-            if (array.Length == 0)
-            {
-                return;
-            }
-
-            if (orderedPercent < 0)
-            {
-                orderedPercent = 0;
-            }
-            else if (orderedPercent > 100)
-            {
-                orderedPercent = 100;
-            }
-
-            int orderedPartLength = array.Length * orderedPercent / 100;
-            if (orderedPartLength > 1)
-            {
-                Array.Sort(array, 0, orderedPartLength);
-            }
+            comparisons = 0;
+            assignments = 0;
         }
 
         private int[] SimpleTwoPhaseMergeSort(int[] source)
@@ -204,6 +207,191 @@ namespace Lab_22_26
             }
 
             return source;
+        }
+
+        private int[] SimpleOnePhaseMergeSort(int[] source)
+        {
+            int n = source.Length;
+            if (n <= 1)
+            {
+                return source;
+            }
+
+            int[] b = new int[n];
+            int[] c = new int[n];
+            int[] d = new int[n];
+            int[] e = new int[n];
+
+            int runLength = 1;
+            int bCount;
+            int cCount;
+            SplitBySeries(source, n, runLength, b, c, out bCount, out cCount);
+
+            int dCount = 0;
+            int eCount = 0;
+            bool readFromBC = true;
+
+            while (runLength < n)
+            {
+                if (readFromBC)
+                {
+                    MergeSeriesToTwoOutputs(b, bCount, c, cCount, runLength, d, e, out dCount, out eCount);
+                }
+                else
+                {
+                    MergeSeriesToTwoOutputs(d, dCount, e, eCount, runLength, b, c, out bCount, out cCount);
+                }
+
+                runLength *= 2;
+                readFromBC = !readFromBC;
+            }
+
+            if (readFromBC)
+            {
+                int index = 0;
+                for (int i = 0; i < bCount; i++)
+                {
+                    source[index++] = b[i];
+                    assignments++;
+                }
+
+                for (int i = 0; i < cCount; i++)
+                {
+                    source[index++] = c[i];
+                    assignments++;
+                }
+            }
+            else
+            {
+                int index = 0;
+                for (int i = 0; i < dCount; i++)
+                {
+                    source[index++] = d[i];
+                    assignments++;
+                }
+
+                for (int i = 0; i < eCount; i++)
+                {
+                    source[index++] = e[i];
+                    assignments++;
+                }
+            }
+
+            return source;
+        }
+
+        private void SplitBySeries(int[] source, int sourceCount, int runLength, int[] first, int[] second, out int firstCount, out int secondCount)
+        {
+            firstCount = 0;
+            secondCount = 0;
+            bool toFirst = true;
+
+            for (int i = 0; i < sourceCount;)
+            {
+                int currentRunLength = Math.Min(runLength, sourceCount - i);
+                if (toFirst)
+                {
+                    for (int k = 0; k < currentRunLength; k++)
+                    {
+                        first[firstCount++] = source[i++];
+                        assignments++;
+                    }
+                }
+                else
+                {
+                    for (int k = 0; k < currentRunLength; k++)
+                    {
+                        second[secondCount++] = source[i++];
+                        assignments++;
+                    }
+                }
+
+                toFirst = !toFirst;
+            }
+        }
+
+        private void MergeSeriesToTwoOutputs(
+            int[] firstInput,
+            int firstCount,
+            int[] secondInput,
+            int secondCount,
+            int runLength,
+            int[] firstOutput,
+            int[] secondOutput,
+            out int firstOutputCount,
+            out int secondOutputCount)
+        {
+            firstOutputCount = 0;
+            secondOutputCount = 0;
+
+            int firstIndex = 0;
+            int secondIndex = 0;
+            bool toFirstOutput = true;
+
+            while (firstIndex < firstCount || secondIndex < secondCount)
+            {
+                int firstRunEnd = Math.Min(firstIndex + runLength, firstCount);
+                int secondRunEnd = Math.Min(secondIndex + runLength, secondCount);
+
+                while (firstIndex < firstRunEnd && secondIndex < secondRunEnd)
+                {
+                    comparisons++;
+                    if (firstInput[firstIndex] <= secondInput[secondIndex])
+                    {
+                        if (toFirstOutput)
+                        {
+                            firstOutput[firstOutputCount++] = firstInput[firstIndex++];
+                        }
+                        else
+                        {
+                            secondOutput[secondOutputCount++] = firstInput[firstIndex++];
+                        }
+                    }
+                    else
+                    {
+                        if (toFirstOutput)
+                        {
+                            firstOutput[firstOutputCount++] = secondInput[secondIndex++];
+                        }
+                        else
+                        {
+                            secondOutput[secondOutputCount++] = secondInput[secondIndex++];
+                        }
+                    }
+
+                    assignments++;
+                }
+
+                while (firstIndex < firstRunEnd)
+                {
+                    if (toFirstOutput)
+                    {
+                        firstOutput[firstOutputCount++] = firstInput[firstIndex++];
+                    }
+                    else
+                    {
+                        secondOutput[secondOutputCount++] = firstInput[firstIndex++];
+                    }
+
+                    assignments++;
+                }
+
+                while (secondIndex < secondRunEnd)
+                {
+                    if (toFirstOutput)
+                    {
+                        firstOutput[firstOutputCount++] = secondInput[secondIndex++];
+                    }
+                    else
+                    {
+                        secondOutput[secondOutputCount++] = secondInput[secondIndex++];
+                    }
+
+                    assignments++;
+                }
+
+                toFirstOutput = !toFirstOutput;
+            }
         }
 
         private bool SortingCheck(int[] array)
