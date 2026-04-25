@@ -64,7 +64,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(1179, 562);
+            this.ExitButton.Location = new System.Drawing.Point(1181, 566);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(165, 42);
             this.ExitButton.TabIndex = 6;
@@ -74,7 +74,7 @@
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(967, 571);
+            this.numericUpDown2.Location = new System.Drawing.Point(967, 575);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 31);
             this.numericUpDown2.TabIndex = 5;
@@ -87,7 +87,7 @@
             // OpNud
             // 
             this.OpNud.AutoSize = true;
-            this.OpNud.Location = new System.Drawing.Point(848, 573);
+            this.OpNud.Location = new System.Drawing.Point(847, 579);
             this.OpNud.Name = "OpNud";
             this.OpNud.Size = new System.Drawing.Size(68, 25);
             this.OpNud.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             // SizeNUD
             // 
-            this.SizeNUD.Location = new System.Drawing.Point(539, 573);
+            this.SizeNUD.Location = new System.Drawing.Point(551, 573);
             this.SizeNUD.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(321, 571);
+            this.label1.Location = new System.Drawing.Point(323, 577);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 25);
             this.label1.TabIndex = 2;

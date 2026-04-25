@@ -51,6 +51,9 @@ namespace Lab_22_26
                 dataGridView1.Rows[i].Cells[0].Value = i == 0;
                 dataGridView1.Rows[i].Cells[1].Value = sortingNames[i];
             }
+
+            dataGridView1.Rows[0].Cells[0].Value = true;
+            dataGridView1.Rows[1].Cells[0].Value = true;
         }
 
         private void SortButton_Click(object sender, EventArgs e)
@@ -59,6 +62,7 @@ namespace Lab_22_26
 
             bool runSimpleTwoPhase = Convert.ToBoolean(dataGridView1.Rows[0].Cells[0].Value);
             bool runSimpleOnePhase = Convert.ToBoolean(dataGridView1.Rows[1].Cells[0].Value);
+            bool runNaturalTwoPhase = Convert.ToBoolean(dataGridView1.Rows[2].Cells[0].Value);
 
             if (runSimpleTwoPhase)
             {
@@ -98,7 +102,26 @@ namespace Lab_22_26
                 ClearRowResult(1);
             }
 
-            for (int i = 2; i < dataGridView1.RowCount; i++)
+            if (runNaturalTwoPhase)
+            {
+                int[] workArray = (int[])copy.Clone();
+                ResetCounters();
+
+                int startTime = Environment.TickCount;
+                workArray = NaturalTwoPhaseMergeSort(workArray);
+                int endTime = Environment.TickCount - startTime;
+
+                dataGridView1.Rows[2].Cells[2].Value = comparisons;
+                dataGridView1.Rows[2].Cells[3].Value = assignments;
+                dataGridView1.Rows[2].Cells[4].Value = endTime;
+                dataGridView1.Rows[2].Cells[5].Value = SortingCheck(workArray) ? "Да" : "Нет";
+            }
+            else
+            {
+                ClearRowResult(2);
+            }
+
+            for (int i = 3; i < dataGridView1.RowCount; i++)
             {
                 ClearRowResult(i);
             }
@@ -153,6 +176,7 @@ namespace Lab_22_26
                         for (int k = 0; k < currentRunLength; k++)
                         {
                             b[bCount++] = source[i++];
+                            assignments++;
                         }
                     }
                     else
@@ -160,6 +184,7 @@ namespace Lab_22_26
                         for (int k = 0; k < currentRunLength; k++)
                         {
                             c[cCount++] = source[i++];
+                            assignments++;
                         }
                     }
 
@@ -204,6 +229,7 @@ namespace Lab_22_26
                 }
 
                 runLength *= 2;
+
             }
 
             return source;
@@ -391,6 +417,147 @@ namespace Lab_22_26
                 }
 
                 toFirstOutput = !toFirstOutput;
+            }
+        }
+
+        private int[] NaturalTwoPhaseMergeSort(int[] source)
+        {
+            int n = source.Length;
+            if (n <= 1)
+            {
+                return source;
+            }
+
+            int[] b = new int[n];
+            int[] c = new int[n];
+
+            while (true)
+            {
+                int bCount;
+                int cCount;
+                List<int> bRunLengths;
+                List<int> cRunLengths;
+
+                SplitNaturalRuns(source, b, c, out bCount, out cCount, out bRunLengths, out cRunLengths);
+
+                if (cRunLengths.Count == 0 && bRunLengths.Count == 1)
+                {
+                    return source;
+                }
+
+                MergeNaturalRuns(b, bRunLengths, c, cRunLengths, source);
+            }
+        }
+
+        private void SplitNaturalRuns(
+            int[] source,
+            int[] first,
+            int[] second,
+            out int firstCount,
+            out int secondCount,
+            out List<int> firstRunLengths,
+            out List<int> secondRunLengths)
+        {
+            firstCount = 0;
+            secondCount = 0;
+            firstRunLengths = new List<int>();
+            secondRunLengths = new List<int>();
+
+            bool toFirst = true;
+            int i = 0;
+
+            while (i < source.Length)
+            {
+                int runStart = i;
+                i++;
+
+                while (i < source.Length)
+                {
+                    comparisons++;
+                    if (source[i - 1] <= source[i])
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+                int runLength = i - runStart;
+
+                if (toFirst)
+                {
+                    for (int k = 0; k < runLength; k++)
+                    {
+                        first[firstCount++] = source[runStart + k];
+                        assignments++;
+                    }
+
+                    firstRunLengths.Add(runLength);
+                }
+                else
+                {
+                    for (int k = 0; k < runLength; k++)
+                    {
+                        second[secondCount++] = source[runStart + k];
+                        assignments++;
+                    }
+
+                    secondRunLengths.Add(runLength);
+                }
+
+                toFirst = !toFirst;
+            }
+        }
+
+        private void MergeNaturalRuns(
+            int[] first,
+            List<int> firstRunLengths,
+            int[] second,
+            List<int> secondRunLengths,
+            int[] output)
+        {
+            int firstPos = 0;
+            int secondPos = 0;
+            int outPos = 0;
+
+            int runsToMerge = Math.Max(firstRunLengths.Count, secondRunLengths.Count);
+
+            for (int run = 0; run < runsToMerge; run++)
+            {
+                int firstLen = run < firstRunLengths.Count ? firstRunLengths[run] : 0;
+                int secondLen = run < secondRunLengths.Count ? secondRunLengths[run] : 0;
+
+                int firstEnd = firstPos + firstLen;
+                int secondEnd = secondPos + secondLen;
+
+                while (firstPos < firstEnd && secondPos < secondEnd)
+                {
+                    comparisons++;
+                    if (first[firstPos] <= second[secondPos])
+                    {
+                        output[outPos++] = first[firstPos++];
+                    }
+                    else
+                    {
+                        output[outPos++] = second[secondPos++];
+                    }
+
+                    assignments++;
+                }
+
+                while (firstPos < firstEnd)
+                {
+                    output[outPos++] = first[firstPos++];
+                    assignments++;
+                }
+
+                while (secondPos < secondEnd)
+                {
+                    output[outPos++] = second[secondPos++];
+                    assignments++;
+                }
             }
         }
 
