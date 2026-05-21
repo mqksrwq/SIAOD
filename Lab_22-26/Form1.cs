@@ -121,9 +121,45 @@ namespace Lab_22_26
                 ClearRowResult(2);
             }
 
-            for (int i = 3; i < dataGridView1.RowCount; i++)
+            bool runNaturalOnePhase = Convert.ToBoolean(dataGridView1.Rows[3].Cells[0].Value);
+            bool runAbsorption = Convert.ToBoolean(dataGridView1.Rows[4].Cells[0].Value);
+
+            if (runNaturalOnePhase)
             {
-                ClearRowResult(i);
+                int[] workArray = (int[])copy.Clone();
+                ResetCounters();
+
+                int startTime = Environment.TickCount;
+                workArray = NaturalOnePhaseMergeSort(workArray);
+                int endTime = Environment.TickCount - startTime;
+
+                dataGridView1.Rows[3].Cells[2].Value = comparisons;
+                dataGridView1.Rows[3].Cells[3].Value = assignments;
+                dataGridView1.Rows[3].Cells[4].Value = endTime;
+                dataGridView1.Rows[3].Cells[5].Value = SortingCheck(workArray) ? "Да" : "Нет";
+            }
+            else
+            {
+                ClearRowResult(3);
+            }
+
+            if (runAbsorption)
+            {
+                int[] workArray = (int[])copy.Clone();
+                ResetCounters();
+
+                int startTime = Environment.TickCount;
+                workArray = AbsorptionSort(workArray);
+                int endTime = Environment.TickCount - startTime;
+
+                dataGridView1.Rows[4].Cells[2].Value = comparisons;
+                dataGridView1.Rows[4].Cells[3].Value = assignments;
+                dataGridView1.Rows[4].Cells[4].Value = endTime;
+                dataGridView1.Rows[4].Cells[5].Value = SortingCheck(workArray) ? "Да" : "Нет";
+            }
+            else
+            {
+                ClearRowResult(4);
             }
         }
 
@@ -580,6 +616,241 @@ namespace Lab_22_26
             dataGridView1.Rows[rowIndex].Cells[3].Value = null;
             dataGridView1.Rows[rowIndex].Cells[4].Value = null;
             dataGridView1.Rows[rowIndex].Cells[5].Value = null;
+        }
+
+        private int[] NaturalOnePhaseMergeSort(int[] source)
+        {
+            int n = source.Length;
+            if (n <= 1) return source;
+
+            var tapeA = new List<int>(n);
+            var tapeB = new List<int>(n);
+            var runsA = new List<int>();
+            var runsB = new List<int>();
+
+            SplitNaturalRunsToLists(source, n, tapeA, runsA, tapeB, runsB);
+
+            if (runsB.Count == 0) return source;
+
+            while (true)
+            {
+                var tapeC = new List<int>(n);
+                var tapeD = new List<int>(n);
+                var runsC = new List<int>();
+                var runsD = new List<int>();
+
+                MergeNaturalRunsToTwoLists(tapeA, runsA, tapeB, runsB, tapeC, runsC, tapeD, runsD);
+
+                if (runsD.Count == 0 && runsC.Count == 1)
+                {
+                    for (int i = 0; i < n; i++) { source[i] = tapeC[i]; assignments++; }
+                    return source;
+                }
+
+                tapeA = tapeC;
+                runsA = runsC;
+                tapeB = tapeD;
+                runsB = runsD;
+            }
+        }
+
+        private void SplitNaturalRunsToLists(int[] source, int count, List<int> first, List<int> firstRuns, List<int> second, List<int> secondRuns)
+        {
+            int pos = 0;
+            bool toFirst = true;
+
+            while (pos < count)
+            {
+                int runStart = pos++;
+                while (pos < count)
+                {
+                    comparisons++;
+                    if (source[pos - 1] <= source[pos]) pos++;
+                    else break;
+                }
+
+                int runLen = pos - runStart;
+                List<int> tape = toFirst ? first : second;
+                List<int> runs = toFirst ? firstRuns : secondRuns;
+
+                for (int j = 0; j < runLen; j++) { tape.Add(source[runStart + j]); assignments++; }
+                runs.Add(runLen);
+                toFirst = !toFirst;
+            }
+        }
+
+        private void MergeNaturalRunsToTwoLists(
+            List<int> tapeA, List<int> runsA,
+            List<int> tapeB, List<int> runsB,
+            List<int> tapeC, List<int> runsC,
+            List<int> tapeD, List<int> runsD)
+        {
+            int posA = 0, posB = 0;
+            bool toC = true;
+            int maxRuns = Math.Max(runsA.Count, runsB.Count);
+
+            for (int run = 0; run < maxRuns; run++)
+            {
+                int lenA = run < runsA.Count ? runsA[run] : 0;
+                int lenB = run < runsB.Count ? runsB[run] : 0;
+                int endA = posA + lenA;
+                int endB = posB + lenB;
+                int mergedLen = 0;
+
+                while (posA < endA && posB < endB)
+                {
+                    comparisons++;
+                    int val = tapeA[posA] <= tapeB[posB] ? tapeA[posA++] : tapeB[posB++];
+                    if (toC) tapeC.Add(val); else tapeD.Add(val);
+                    assignments++;
+                    mergedLen++;
+                }
+
+                while (posA < endA)
+                {
+                    if (toC) tapeC.Add(tapeA[posA]); else tapeD.Add(tapeA[posA]);
+                    posA++;
+                    assignments++;
+                    mergedLen++;
+                }
+
+                while (posB < endB)
+                {
+                    if (toC) tapeC.Add(tapeB[posB]); else tapeD.Add(tapeB[posB]);
+                    posB++;
+                    assignments++;
+                    mergedLen++;
+                }
+
+                if (toC) runsC.Add(mergedLen); else runsD.Add(mergedLen);
+                toC = !toC;
+            }
+        }
+
+        private int[] AbsorptionSort(int[] source)
+        {
+            int n = source.Length;
+            if (n <= 1) return source;
+
+            int percent = (int)numericUpDown2.Value;
+            int k = Math.Max(2, Math.Min(percent / 10 + 2, 12));
+
+            var tapes = new List<List<int>>(k);
+            var tapeRuns = new List<List<int>>(k);
+            for (int i = 0; i < k; i++)
+            {
+                tapes.Add(new List<int>());
+                tapeRuns.Add(new List<int>());
+            }
+
+            int pos = 0, tapeIdx = 0;
+            while (pos < n)
+            {
+                int runStart = pos++;
+                while (pos < n)
+                {
+                    comparisons++;
+                    if (source[pos - 1] <= source[pos]) pos++;
+                    else break;
+                }
+
+                int runLen = pos - runStart;
+                for (int j = 0; j < runLen; j++) { tapes[tapeIdx].Add(source[runStart + j]); assignments++; }
+                tapeRuns[tapeIdx].Add(runLen);
+                tapeIdx = (tapeIdx + 1) % k;
+            }
+
+            while (true)
+            {
+                int totalRuns = 0;
+                for (int i = 0; i < k; i++) totalRuns += tapeRuns[i].Count;
+
+                if (totalRuns == 1)
+                {
+                    int doneIdx = 0;
+                    while (tapeRuns[doneIdx].Count == 0) doneIdx++;
+                    for (int i = 0; i < n; i++) { source[i] = tapes[doneIdx][i]; assignments++; }
+                    return source;
+                }
+
+                var merged = new List<int>(n);
+                var mergedRuns = new List<int>();
+                MergeKListTapes(tapes, tapeRuns, k, merged, mergedRuns);
+
+                if (mergedRuns.Count == 1)
+                {
+                    for (int i = 0; i < n; i++) { source[i] = merged[i]; assignments++; }
+                    return source;
+                }
+
+                for (int i = 0; i < k; i++) { tapes[i].Clear(); tapeRuns[i].Clear(); }
+                int mPos = 0;
+                tapeIdx = 0;
+                foreach (int runLen in mergedRuns)
+                {
+                    for (int j = 0; j < runLen; j++) { tapes[tapeIdx].Add(merged[mPos++]); assignments++; }
+                    tapeRuns[tapeIdx].Add(runLen);
+                    tapeIdx = (tapeIdx + 1) % k;
+                }
+            }
+        }
+
+        private void MergeKListTapes(List<List<int>> tapes, List<List<int>> tapeRuns, int k, List<int> output, List<int> outputRuns)
+        {
+            int[] runIdx = new int[k];
+            int[] posInTape = new int[k];
+
+            while (true)
+            {
+                bool anyLeft = false;
+                for (int i = 0; i < k; i++)
+                    if (runIdx[i] < tapeRuns[i].Count) { anyLeft = true; break; }
+                if (!anyLeft) break;
+
+                int[] runEnd = new int[k];
+                bool[] active = new bool[k];
+                for (int i = 0; i < k; i++)
+                {
+                    if (runIdx[i] < tapeRuns[i].Count)
+                    {
+                        runEnd[i] = posInTape[i] + tapeRuns[i][runIdx[i]];
+                        active[i] = true;
+                        runIdx[i]++;
+                    }
+                }
+
+                int mergedLen = 0;
+                while (true)
+                {
+                    int minTape = -1;
+                    bool foundAny = false;
+                    for (int i = 0; i < k; i++)
+                    {
+                        if (!active[i] || posInTape[i] >= runEnd[i]) continue;
+                        foundAny = true;
+                        if (minTape == -1)
+                        {
+                            minTape = i;
+                        }
+                        else
+                        {
+                            comparisons++;
+                            if (tapes[i][posInTape[i]] < tapes[minTape][posInTape[minTape]])
+                                minTape = i;
+                        }
+                    }
+
+                    if (!foundAny) break;
+
+                    output.Add(tapes[minTape][posInTape[minTape]++]);
+                    assignments++;
+                    mergedLen++;
+                    if (posInTape[minTape] >= runEnd[minTape])
+                        active[minTape] = false;
+                }
+
+                outputRuns.Add(mergedLen);
+            }
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

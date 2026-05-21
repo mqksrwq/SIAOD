@@ -64,7 +64,7 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(1181, 566);
+            this.ExitButton.Location = new System.Drawing.Point(1175, 568);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(165, 42);
             this.ExitButton.TabIndex = 6;
@@ -95,7 +95,7 @@
             // 
             // SizeNUD
             // 
-            this.SizeNUD.Location = new System.Drawing.Point(551, 573);
+            this.SizeNUD.Location = new System.Drawing.Point(552, 573);
             this.SizeNUD.Maximum = new decimal(new int[] {
             10000000,
             0,
